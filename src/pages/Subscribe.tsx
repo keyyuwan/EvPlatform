@@ -3,6 +3,8 @@ import { Logo } from "../components/Logo";
 import { useNavigate } from "react-router-dom";
 import { useCreateSubscriberMutation } from "../graphql/generated";
 
+import vscodeHomePicture from "../assets/vscode-home-picture.png";
+
 export function Subscribe() {
   const navigate = useNavigate();
 
@@ -77,7 +79,7 @@ export function Subscribe() {
         </div>
       </div>
 
-      <img src="/src/assets/vscode-home-picture.png" alt="" />
+      <img src={vscodeHomePicture} alt="" />
     </div>
   );
 }
