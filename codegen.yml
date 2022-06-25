@@ -1,0 +1,18 @@
+# URL da API GraphQL
+schema: https://api-sa-east-1.graphcms.com/v2/cl4o71rz810il01z2d2e567s9/master
+
+# Onde vão estar minhas queries e mutations
+documents: "./src/graphql/**/*.graphql"
+
+# Arquivos que vão ser gerados automaticamente pelo Graphql CodeGen a partir da API
+generates:
+  ./src/graphql/generated.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+    config:
+      reactApolloVersion: 3
+      withHooks: true
+      withHOC: false
+      withComponent: false
