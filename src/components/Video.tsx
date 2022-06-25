@@ -19,7 +19,6 @@ export function Video({ lessonSlug }: VideoProps) {
     variables: {
       slug: lessonSlug,
     },
-    fetchPolicy: "no-cache",
   });
 
   if (!data || !data.lesson) {
@@ -35,7 +34,7 @@ export function Video({ lessonSlug }: VideoProps) {
       <div className="bg-black flex justify-center">
         <div className="h-full w-full max-w-[1100px] max-h-[60vh] aspect-video">
           <Player>
-            <Youtube videoId={data.lesson.videoId} />
+            <Youtube key={data.lesson.videoId} videoId={data.lesson.videoId} />
             <DefaultUi />
           </Player>
         </div>
