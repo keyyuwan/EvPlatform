@@ -40,11 +40,13 @@ export function Video({ lessonSlug }: VideoProps) {
         </div>
       </div>
 
-      <div className="p-8 max-w-[1100px] mx-auto">
-        <div className="flex items-start gap-16">
+      <div className="p-6 max-w-[1100px] mx-auto lg:p-8">
+        <div className="flex flex-col items-start gap-6 lg:flex-row lg:gap-16">
           <div className="flex-1">
-            <h1 className="text-2xl font-bold">{data.lesson.title}</h1>
-            <p className="mt-4 text-gray-200 leading-relaxed">
+            <h1 className="text-lg font-bold lg:text-2xl">
+              {data.lesson.title}
+            </h1>
+            <p className="text-sm mt-4 text-gray-200 leading-relaxed lg:text-base">
               {data.lesson.description}
             </p>
 
@@ -57,7 +59,7 @@ export function Video({ lessonSlug }: VideoProps) {
                 />
 
                 <div className="leading-relaxed">
-                  <strong className="font-bold text-2xl block">
+                  <strong className="text-lg font-bold block lg:text-2xl">
                     {data.lesson.teacher.name}
                   </strong>
                   <span className="text-gray-200 text-sm block">
@@ -68,7 +70,7 @@ export function Video({ lessonSlug }: VideoProps) {
             )}
           </div>
 
-          <div className="flex flex-col gap-4">
+          <div className="w-full flex flex-col gap-4 lg:w-auto">
             <a
               href="#"
               className="p-4 text-sm bg-green-500 flex items-center rounded font-bold uppercase gap-2 justify-center hover:bg-green-700 transition-colors"
@@ -86,42 +88,46 @@ export function Video({ lessonSlug }: VideoProps) {
           </div>
         </div>
 
-        <div className="gap-8 mt-20 grid grid-cols-2">
+        <div className="gap-4 mt-16 grid lg:gap-8 lg:mt-20 lg:grid-cols-2">
           <a
             href="#"
-            className="bg-gray-700 rounded overflow-hidden flex items-stretch gap-6 hover:bg-gray-600 transition-colors"
+            className="bg-gray-700 rounded overflow-hidden flex items-stretch gap-4 hover:bg-gray-600 transition-colors lg:gap-6"
           >
             <div className="bg-green-700 h-full p-6 flex items-center">
               <FileArrowDown size={40} />
             </div>
-            <div className="py-6 leading-relaxed">
-              <strong className="text-2xl">Material complemetar</strong>
-              <p className="text-sm text-gray-200 mt-2">
+            <div className="py-4 lg:leading-relaxed lg:py-6">
+              <strong className="text-lg lg:text-2xl">
+                Material complemetar
+              </strong>
+              <p className="leading-relaxed text-gray-200 mt-1 text-xs lg:text-sm lg:mt-2 lg:leading-normal">
                 Acesse o material complementar para acelerar o seu
                 desenvolvimento
               </p>
             </div>
-            <div className="h-full p-6 flex items-center">
-              <CaretRight size={24} />
+            <div className="p-4 h-full flex items-center lg:p-6">
+              <CaretRight size={24} className="text-blue-500" />
             </div>
           </a>
 
           <a
             href="#"
-            className="bg-gray-700 rounded overflow-hidden flex items-stretch gap-6 hover:bg-gray-600 transition-colors"
+            className="bg-gray-700 rounded overflow-hidden flex items-stretch gap-4 hover:bg-gray-600 transition-colors lg:gap-6"
           >
             <div className="bg-green-700 h-full p-6 flex items-center">
               <Image size={40} />
             </div>
-            <div className="py-6 leading-relaxed">
-              <strong className="text-2xl">Wallpapers exclusivos</strong>
-              <p className="text-sm text-gray-200 mt-2">
+            <div className="py-4 lg:leading-relaxed lg:py-6">
+              <strong className="text-lg lg:text-2xl">
+                Wallpapers exclusivos
+              </strong>
+              <p className="leading-relaxed text-gray-200 mt-1 text-xs lg:text-sm lg:mt-2 lg:leading-normal">
                 Baixe wallpapers exclusivos do Ignite Lab e personalize a sua
                 máquina
               </p>
             </div>
-            <div className="h-full p-6 flex items-center">
-              <CaretRight size={24} />
+            <div className="p-4 h-full flex items-center lg:p-6">
+              <CaretRight size={24} className="text-blue-500" />
             </div>
           </a>
         </div>

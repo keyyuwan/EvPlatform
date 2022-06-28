@@ -15,9 +15,11 @@ export function Event() {
         {slug ? (
           <Video lessonSlug={slug} />
         ) : (
-          <div className="flex-1 flex items-center justify-center">
-            <div className="h-full w-full max-w-[800px] max-h-[60vh] flex items-center justify-center gap-4 bg-gray-700 rounded">
-              <span className="text-2xl">Acesse uma aula para começar</span>
+          <div className="mt-10 flex-1 flex items-start justify-center">
+            <div className="max-w-[320px] max-h-[60vh] h-full w-full flex flex-col items-center justify-center gap-4 bg-gray-700 rounded lg:max-w-[800px] lg:flex-row">
+              <span className="text-center text-2xl">
+                Acesse uma aula para começar
+              </span>
               <ArrowRight size={40} />
             </div>
           </div>
