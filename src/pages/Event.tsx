@@ -1,18 +1,42 @@
+import { useEffect, useState } from "react";
 import { ArrowRight } from "phosphor-react";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
+
 import { Header } from "../components/Header";
 import { Sidebar } from "../components/Sidebar";
 import { Video } from "../components/Video";
+import { NavigationMenu } from "../components/NavigationMenu";
 
 export function Event() {
   const { slug } = useParams<{ slug: string }>();
+  const location = useLocation();
+
+  const [isHamburguerMenuOpen, setIsHamburguerMenuOpen] = useState(false);
+
+  function handleOpenHamburguerMenu() {
+    setIsHamburguerMenuOpen(true);
+  }
+
+  function handleCloseHamburguerMenu() {
+    setIsHamburguerMenuOpen(false);
+  }
+
+  useEffect(() => {
+    setIsHamburguerMenuOpen(false);
+  }, [location]);
 
   return (
     <div className="flex flex-col min-h-screen">
-      <Header />
+      <Header
+        isHamburguerMenuOpen={isHamburguerMenuOpen}
+        handleOpenHamburguerMenu={handleOpenHamburguerMenu}
+        handleCloseHamburguerMenu={handleCloseHamburguerMenu}
+      />
 
       <main className="flex flex-1">
-        {slug ? (
+        {isHamburguerMenuOpen ? (
+          <NavigationMenu />
+        ) : slug ? (
           <Video lessonSlug={slug} />
         ) : (
           <div className="mt-10 flex-1 flex items-start justify-center">
@@ -24,6 +48,7 @@ export function Event() {
             </div>
           </div>
         )}
+
         <Sidebar />
       </main>
     </div>
