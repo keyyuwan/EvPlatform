@@ -23,6 +23,7 @@ export function Event() {
 
   useEffect(() => {
     setIsHamburguerMenuOpen(false);
+    window.scrollTo({ top: 0 });
   }, [location]);
 
   return (
